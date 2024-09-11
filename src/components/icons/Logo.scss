@@ -1,0 +1,9 @@
+@import "../../../styles.scss";
+
+.logo {
+  @include bold-text(1rem, $black);
+  padding: 25px 0 0 10px;
+  .pro {
+    @include bold-text(1rem, $orange);
+  }
+}
