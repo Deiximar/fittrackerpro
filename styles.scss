@@ -1,0 +1,60 @@
+/* Color Variables */
+
+$orange: #f86b5b;
+$green: #018767;
+$black: #272727;
+$gray: #b4b4b4;
+$white: #ffffff;
+$light-green: #cce7e1;
+
+@mixin extra-light-text($font-size, $color) {
+  font-weight: 200;
+  font-size: $font-size;
+  color: $color;
+}
+
+@mixin regular-text($font-size, $color) {
+  font-weight: 400;
+  font-size: $font-size;
+  color: $color;
+}
+
+@mixin semibold-text($font-size, $color) {
+  font-weight: 600;
+  font-size: $font-size;
+  color: $color;
+}
+@mixin bold-text($font-size, $color) {
+  font-weight: 700;
+  font-size: $font-size;
+  color: $color;
+}
+
+* {
+  @include regular-text(1rem, black);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 430px;
+  height: 932px;
+  margin: 0 auto;
+}
+
+main {
+  height: 100vh;
+}
+
+button,
+a {
+  cursor: pointer;
+}
