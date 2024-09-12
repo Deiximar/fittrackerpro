@@ -1,15 +1,14 @@
 import { useState } from "react";
-import Exercise from "./Exercise";
+import ExerciseCard from "./ExerciseCard";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
-
 import { fetchExercises } from "../../service/exerciseApi";
-
+import SearchIcon from "../icons/SearchIcon";
+import "./exercise.scss";
 function ExcersiceList() {
   const [searchText, setSearchText] = useState("");
   const [bodyPart, setBodyPart] = useState("");
   const [equipment, setEquipment] = useState("");
-  const [exercise, setExercise] = useState();
 
   const {
     data,
@@ -29,6 +28,7 @@ function ExcersiceList() {
       }
     },
   });
+
   useEffect(() => {
     const handleScroll = () => {
       if (
@@ -48,12 +48,13 @@ function ExcersiceList() {
 
   const content = data?.pages?.map((todos) =>
     todos.content.map((todo) => {
-      return <Exercise key={todo.id} exercise={todo} />;
+      return <ExerciseCard key={todo.id} exercise={todo} />;
     })
   );
+
   return (
-    <div>
-      <h2>Exercises</h2>
+    <div className="exercise-container">
+      <h2 className="title">Exercises</h2>
 
       <div>
         <div className="search-bar">
@@ -63,6 +64,7 @@ function ExcersiceList() {
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
+          <SearchIcon className="search-icon" />
         </div>
         <div className="selectors">
           <select
@@ -118,7 +120,7 @@ function ExcersiceList() {
           </select>
         </div>
 
-        {content}
+        <div className="exercise-list-container">{content}</div>
       </div>
     </div>
   );
