@@ -1,7 +1,8 @@
 import React from "react";
+import ExcersiceList from "../components/exercises/ExcersiceList";
 
 function Exercises() {
-  return <div>Exercises</div>;
+  return <ExcersiceList />;
 }
 
 export default Exercises;

@@ -1,0 +1,13 @@
+@import "../../../styles.scss";
+
+.exercise-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+
+  .exercise-image {
+    width: 70px;
+    height: 70px;
+  }
+}
