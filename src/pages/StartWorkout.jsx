@@ -1,7 +1,8 @@
 import React from "react";
+import StartWorkoutComponent from "../components/routines/StartWorkoutComponent";
 
 function StartWorkout() {
-  return <div>StartWorkout</div>;
+  return <StartWorkoutComponent />;
 }
 
 export default StartWorkout;

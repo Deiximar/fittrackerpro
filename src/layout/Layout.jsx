@@ -4,13 +4,11 @@ import Logo from "../components/icons/Logo";
 
 const Layout = () => {
   return (
-    <div>
-      <main>
-        <Logo />
-        <Outlet />
-        <Navbar></Navbar>
-      </main>
-    </div>
+    <main>
+      <Logo />
+      <Outlet />
+      <Navbar></Navbar>
+    </main>
   );
 };
 
