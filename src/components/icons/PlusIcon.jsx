@@ -1,7 +1,7 @@
 import { BiPlus } from "react-icons/bi";
 import { IconContext } from "react-icons";
 
-function StartWorkoutIcon() {
+function PlusIcon() {
   return (
     <IconContext.Provider value={{ className: "icon" }}>
       <BiPlus />
@@ -9,4 +9,4 @@ function StartWorkoutIcon() {
   );
 }
 
-export default StartWorkoutIcon;
+export default PlusIcon;

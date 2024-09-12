@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
-import StartWorkoutIcon from "../icons/StartWorkoutIcon";
+import PlusIcon from "../icons/PlusIcon";
 import "./iconButton.scss";
 
 function StartWorkoutButton() {
   return (
     <NavLink to="/start-workout" className="icon-button-container">
-      <StartWorkoutIcon className="icon" />
+      <PlusIcon className="icon" />
       <p className="icon-text">Start Workout</p>
     </NavLink>
   );
