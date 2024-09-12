@@ -1,5 +1,8 @@
 @import "../../../styles.scss";
 
 .icon-button-container {
-  @include semibold-text(12px, $gray);
+  text-decoration: none;
+  .icon-text {
+    @include semibold-text(12px, $gray);
+  }
 }

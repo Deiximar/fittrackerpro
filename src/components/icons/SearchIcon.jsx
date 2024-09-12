@@ -1,12 +1,12 @@
-import { IoIosFitness } from "react-icons/io";
+import { BsSearch } from "react-icons/bs";
 import { IconContext } from "react-icons";
 import "./icons.scss";
-function ExerciseIcon() {
+function SearchIcon() {
   return (
     <IconContext.Provider value={{ className: "icon" }}>
-      <IoIosFitness />
+      <BsSearch />
     </IconContext.Provider>
   );
 }
 
-export default ExerciseIcon;
+export default SearchIcon;

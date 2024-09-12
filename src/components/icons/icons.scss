@@ -1,0 +1,11 @@
+@import "../../../styles.scss";
+
+.icon {
+  fill: $gray;
+  height: 30px;
+  width: 30px;
+}
+
+.active {
+  fill: $orange;
+}
