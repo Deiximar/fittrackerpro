@@ -30,17 +30,20 @@ function ExcersiceList() {
   });
 
   useEffect(() => {
+    const container = document.querySelector(".exercise-list-container");
+
     const handleScroll = () => {
       if (
-        window.innerHeight + window.scrollY >=
-          document.documentElement.scrollHeight - 10 &&
+        container.scrollTop + container.clientHeight >=
+          container.scrollHeight - 10 &&
         hasNextPage
       ) {
         fetchNextPage();
       }
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll); // Limpiar el evento
+
+    container.addEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
   }, [hasNextPage, fetchNextPage]);
 
   if (status === "loading") return <p>Loading exercises...</p>;
@@ -120,7 +123,7 @@ function ExcersiceList() {
           </select>
         </div>
 
-        <div className="exercise-list-container">{content}</div>
+        <div className="exercise-list-container scroll-bar">{content}</div>
       </div>
     </div>
   );

@@ -18,7 +18,7 @@
 
   .sign-up-text {
     @include regular-text(12px, $black);
-
+    margin-top: 15px;
     .sign-up-button {
       @include bold-text(12px, $green);
       text-decoration: none;
