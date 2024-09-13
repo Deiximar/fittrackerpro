@@ -1,0 +1,51 @@
+@import "../../../styles.scss";
+
+.register-container {
+  padding: 0 30px;
+  .title {
+    text-align: center;
+    margin-bottom: 10px;
+    @include bold-text(26px, $gray);
+  }
+  p {
+    @include regular-text(14px, $black);
+    margin-bottom: 20px;
+  }
+}
+
+.register-card {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .weight-height-container {
+      display: flex;
+      justify-content: space-between;
+      .field-container {
+        width: 47%;
+      }
+    }
+  }
+  .cancel-register-container {
+    display: flex;
+    justify-content: space-between;
+    .cancel-button {
+      width: 45%;
+      background-color: $white;
+      border: 1px solid $gray;
+      border-radius: 5px;
+      padding: 5px;
+      @include semibold-text(14px, $gray);
+      margin-top: 10px;
+    }
+    .register-button {
+      width: 45%;
+      background-color: $green;
+      border: none;
+      border-radius: 5px;
+      padding: 5px;
+      @include semibold-text(14px, $white);
+      margin-top: 10px;
+    }
+  }
+}
