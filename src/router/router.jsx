@@ -7,6 +7,7 @@ import Exercises from "../pages/Exercises";
 import Register from "../components/profile/Register";
 import Login from "../components/profile/Login";
 import UserProfile from "../components/profile/UserProfile";
+import ProtectedRoute from "../components/profile/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <Navigate to="login" />,
+            element: <ProtectedRoute />,
           },
           { path: "login", element: <Login /> },
           { path: "register", element: <Register /> },
