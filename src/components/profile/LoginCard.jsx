@@ -4,12 +4,14 @@ import { userLogin } from "../../service/userApi";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
+import Modal from "../modal/Modal";
 import { useAuth } from "../../context/authContext";
-import "./LoginCard.scss";
+import "./Register.scss";
 
 const LoginCard = () => {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+  const queryClient = useQueryClient();
   const { setToken, token } = useAuth();
   const [form, setForm] = useState({
     email: "",
@@ -23,8 +25,12 @@ const LoginCard = () => {
   const mutation = useMutation({
     mutationFn: (form) => userLogin(form),
     onSuccess: (res) => {
-      queryClient.invalidateQueries({ queryKey: ["user"] });
-      setToken(res.data.token);
+      queryClient.invalidateQueries({ queryKey: ["profile"] });
+      setToken(res.accessToken);
+      setIsOpen(true);
+    },
+    onError: (error) => {
+      console.error("Login Error:", error);
     },
   });
 
@@ -42,6 +48,11 @@ const LoginCard = () => {
     if (validateForm()) {
       mutation.mutate(form);
     }
+  };
+
+  const handleAccept = () => {
+    setIsOpen(false);
+    navigate("/profile/user");
   };
 
   const validateForm = () => {
@@ -92,9 +103,21 @@ const LoginCard = () => {
         </button>
         <p className="sign-up-text">
           Don't have an account? &nbsp;
-          <NavLink className="sign-up-button">Sign up</NavLink>
+          <NavLink className="sign-up-button" to="/profile/register">
+            Sign up
+          </NavLink>
         </p>
       </form>
+      {token && (
+        <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+          <h2 className="message">¡Welcome to FitTracker Pro!</h2>
+          <div className="buttonsContainer">
+            <button className="accept-button" onClick={handleAccept}>
+              Accept
+            </button>
+          </div>
+        </Modal>
+      )}
     </div>
   );
 };

@@ -7,6 +7,7 @@
   margin-bottom: 7px;
   label {
     @include regular-text(12px, $black);
+    margin-bottom: 5px;
   }
 
   .input-field {
@@ -17,39 +18,12 @@
       @include regular-text(12px, $gray);
       opacity: 1;
     }
+    &:focus {
+      outline: none;
+    }
   }
 
   .invalidInputText {
     @include regular-text(12px, red);
   }
 }
-
-// .name {
-//   //background-color: $light-yellow;
-
-//   @include semibold-text(14px, $green);
-
-//   &::placeholder {
-//     color: $gray;
-//     opacity: 1;
-//   }
-// }
-
-// .name:focus {
-//   outline: none;
-// }
-
-// .name.inner-shadow-top {
-//   width: 300px;
-//   height: 2.5rem;
-//   //@include inner-shadow-top;
-// }
-
-// .invalidInputText {
-//   margin: 0 auto;
-//   width: 18.75rem;
-//   height: 0.688rem;
-//   color: $green;
-//   font-size: 1rem;
-//   font-weight: 400;
-// }
