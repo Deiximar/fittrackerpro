@@ -4,6 +4,9 @@ import Profile from "../pages/Profile";
 import History from "../pages/History";
 import StartWorkout from "../pages/StartWorkout";
 import Exercises from "../pages/Exercises";
+import Register from "../components/profile/Register";
+import Login from "../components/profile/Login";
+import UserProfile from "../components/profile/UserProfile";
 
 const router = createBrowserRouter([
   {
@@ -12,11 +15,20 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Navigate to="profile" />,
+        element: <Navigate to="start-workout" />,
       },
       {
         path: "profile",
         element: <Profile />,
+        children: [
+          {
+            index: true,
+            element: <Navigate to="login" />,
+          },
+          { path: "login", element: <Login /> },
+          { path: "register", element: <Register /> },
+          { path: "user", element: <UserProfile /> },
+        ],
       },
 
       {
