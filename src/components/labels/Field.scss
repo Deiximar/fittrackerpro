@@ -1,0 +1,29 @@
+@import "../../../styles.scss";
+
+.field-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 7px;
+  label {
+    @include regular-text(12px, $black);
+    margin-bottom: 5px;
+  }
+
+  .input-field {
+    border: 1px solid $gray;
+    border-radius: 4px;
+    padding: 5px;
+    &::placeholder {
+      @include regular-text(12px, $gray);
+      opacity: 1;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .invalidInputText {
+    @include regular-text(12px, red);
+  }
+}

@@ -1,0 +1,21 @@
+@import "../../../styles.scss";
+
+.exercise-card-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  border-bottom: 1px solid $gray;
+  padding: 5px 0;
+  .exercise-image {
+    width: 70px;
+    height: 70px;
+  }
+  .exercise-title {
+    @include bold-text(14px, $black);
+  }
+  .exercise-subtitle {
+    @include semibold-text(12px, $gray);
+  }
+}

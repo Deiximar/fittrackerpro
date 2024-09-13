@@ -1,0 +1,22 @@
+@import "../../../styles.scss";
+
+.icon {
+  fill: $gray;
+  height: 30px;
+  width: 30px;
+}
+
+.editIcon {
+  fill: $white;
+  height: 15px;
+  width: 15px;
+}
+
+.deleteIcon {
+  fill: $orange;
+  height: 15px;
+  width: 15px;
+}
+.active {
+  fill: $orange;
+}

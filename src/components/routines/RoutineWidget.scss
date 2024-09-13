@@ -1,0 +1,21 @@
+@import "../../../styles.scss";
+
+.routine-widget-container {
+  width: 175px;
+  height: 130px;
+  border: 1px solid $gray;
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  h4 {
+    @include semibold-text(14px, $black);
+    margin-bottom: 7px;
+  }
+  p {
+    @include semibold-text(14px, $gray);
+  }
+}

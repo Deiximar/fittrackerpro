@@ -1,0 +1,57 @@
+@import "../../../styles.scss";
+
+.icon-button-container {
+  text-decoration: none;
+  .icon-text {
+    @include semibold-text(12px, $gray);
+  }
+}
+
+.actions-wrapper {
+  .action-button-container {
+    display: inline-block;
+    background-color: transparent;
+    width: 30px;
+    height: 18px;
+    border: none;
+    position: relative;
+    .icon {
+      fill: #018767;
+      background-color: #cce7e1;
+      height: 16px;
+      border-radius: 4px;
+    }
+  }
+
+  .actions {
+    background-color: $green;
+    width: 130px;
+    border-radius: 5px;
+    padding: 7px;
+    right: 10px;
+    position: absolute;
+    ul {
+      list-style-type: none;
+      li {
+        @include semibold-text(14px, $white);
+        display: flex;
+        gap: 5px;
+      }
+    }
+  }
+}
+
+.add-routine {
+  background-color: $light-green;
+  display: flex;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  height: 25px;
+  @include semibold-text(14px, $green);
+  .icon {
+    width: 20px;
+    height: 20px;
+    fill: $green;
+  }
+}
