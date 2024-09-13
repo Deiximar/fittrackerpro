@@ -5,7 +5,6 @@ import Logo from "../components/icons/Logo";
 const Layout = () => {
   return (
     <main>
-      <Logo />
       <Outlet />
       <Navbar></Navbar>
     </main>
