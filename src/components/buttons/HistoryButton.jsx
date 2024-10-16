@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import HistoryIcon from "../icons/HistoryIcon";
-import "./iconButton.scss";
+import "./_IconButton.scss";
 
 function HistoryButton() {
   return (
