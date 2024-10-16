@@ -12,7 +12,7 @@ const LoginCard = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const queryClient = useQueryClient();
-  const { setToken, token } = useAuth();
+  const { setToken, token, setIsAuthenticated } = useAuth();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -28,6 +28,7 @@ const LoginCard = () => {
       queryClient.invalidateQueries({ queryKey: ["profile"] });
       setToken(res.accessToken);
       setIsOpen(true);
+      setIsAuthenticated(true);
     },
     onError: (error) => {
       console.error("Login Error:", error);
