@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import ProfileIcon from "../icons/ProfileIcon";
-import "./iconButton.scss";
+import "./_IconButton.scss";
 
 function ProfileButton() {
   return (

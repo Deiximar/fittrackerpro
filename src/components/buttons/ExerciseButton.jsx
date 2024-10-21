@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import ExerciseIcon from "../icons/ExerciseIcon";
-import "./iconButton.scss";
+import "./_IconButton.scss";
 
 function ExerciseButton() {
   return (
