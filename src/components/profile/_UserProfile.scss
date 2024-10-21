@@ -9,7 +9,7 @@
 
   .user-info-container {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     gap: 20px;
     .profile-image {
       width: 70px;
@@ -48,5 +48,10 @@
         }
       }
     }
+  }
+
+  .title-text {
+    margin-bottom: 15px;
+    @include bold-text(16, $black);
   }
 }

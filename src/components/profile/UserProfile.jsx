@@ -2,6 +2,7 @@ import Logo from "../icons/Logo";
 import RulerButton from "../buttons/RulerButton";
 import LogOutButton from "../buttons/LogOutButton";
 import "./_UserProfile.scss";
+import WeightChart from "../charts/WeightChart";
 
 function UserProfile() {
   return (
@@ -38,7 +39,8 @@ function UserProfile() {
             </div>
           </div>
         </div>
-        <h2>Dashboard</h2>
+        <h2 className="title-text">Dashboard</h2>
+        <WeightChart />
       </div>
     </div>
   );
