@@ -3,6 +3,7 @@ import RulerButton from "../buttons/RulerButton";
 import LogOutButton from "../buttons/LogOutButton";
 import "./_UserProfile.scss";
 import WeightChart from "../charts/WeightChart";
+import WorkoutPerWeek from "../charts/WorkoutPerWeek";
 
 function UserProfile() {
   return (
@@ -40,6 +41,7 @@ function UserProfile() {
           </div>
         </div>
         <h2 className="title-text">Dashboard</h2>
+        <WorkoutPerWeek />
         <WeightChart />
       </div>
     </div>
