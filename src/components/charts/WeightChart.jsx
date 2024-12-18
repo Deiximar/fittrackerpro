@@ -40,9 +40,13 @@ const options = {
   responsive: true,
   scales: {
     y: {
+      border: {
+        display: false,
+      },
       ticks: {
         color: "#b4b4b4",
       },
+
       min: 70,
       max: 78,
     },
@@ -72,7 +76,7 @@ const options = {
     },
     subtitle: {
       display: true,
-      text: "Absolute",
+      text: "Activity",
       color: "#b4b4b4",
       align: "start",
       font: {
@@ -99,7 +103,6 @@ const subtitleLine = {
   id: "subtitleLine",
   afterDraw(chart) {
     const { ctx, chartArea } = chart;
-    console.log(chart);
     const subtitle = chart.config.options.plugins.subtitle;
 
     if (subtitle.display) {
@@ -118,7 +121,7 @@ const subtitleLine = {
 };
 const WeightChart = () => {
   return (
-    <div className="chart-container">
+    <div className="weight-chart-container">
       <Line data={data} options={options} plugins={[subtitleLine]} />
     </div>
   );
