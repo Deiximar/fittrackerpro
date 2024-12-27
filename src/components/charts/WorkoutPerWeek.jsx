@@ -27,11 +27,11 @@ const data = {
   labels: ["12/08", "19/08", "28/08", "04/09", "11/09"],
   datasets: [
     {
-      label: "Workout Per Week",
+      label: "Workouts Per Week",
       display: false,
       data: [4, 3, 3, 4, 5],
       backgroundColor: "#F86B5B",
-      barThickness: 15,
+      barThickness: 12,
       borderRadius: 4,
       borderSkipped: false,
     },
@@ -71,7 +71,7 @@ const options = {
   plugins: {
     title: {
       display: true,
-      text: "Workout Per Week",
+      text: "Workouts Per Week",
       color: "#272727",
       align: "start",
       font: {
@@ -104,11 +104,6 @@ const options = {
   layout: {
     padding: 0,
   },
-  // elements: {
-  //   point: {
-  //     radius: 0,
-  //   },
-  // },
 };
 
 const subtitleLine = {
@@ -116,7 +111,6 @@ const subtitleLine = {
   afterDraw(chart) {
     const { ctx, chartArea } = chart;
     const subtitle = chart.config.options.plugins.subtitle;
-
     if (subtitle.display) {
       const paddingBottom = subtitle.padding.bottom / 1.3;
       const subtitleYPosition = chart.titleBlock.height + paddingBottom;
@@ -125,8 +119,15 @@ const subtitleLine = {
       ctx.strokeStyle = "#018767";
       ctx.beginPath();
       ctx.moveTo(0, subtitleYPosition);
-      ctx.lineTo(chartArea.right, subtitleYPosition);
+      ctx.lineTo(chartArea.right - 20, subtitleYPosition);
       ctx.stroke();
+
+      const numberToShow = 5;
+      ctx.font = "14px Arial";
+      ctx.fillStyle = "#018767";
+      ctx.textAlign = "right";
+      ctx.fillText(numberToShow, chartArea.right - 5, subtitleYPosition + 3);
+
       ctx.restore();
     }
   },
