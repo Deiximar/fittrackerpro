@@ -4,14 +4,19 @@ import LogOutButton from "../buttons/LogOutButton";
 import "./_UserProfile.scss";
 import WeightChart from "../charts/WeightChart";
 import WorkoutPerWeek from "../charts/WorkoutPerWeek";
+import AddWeightModal from "../modal/AddWeightModal";
+import Modal from "../modal/Modal";
+import { useState } from "react";
 
 function UserProfile() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div>
+    <div className="main-container">
       <Logo />
       <div className="user-profile-container">
         <div className="button-container">
-          <RulerButton />
+          <RulerButton onClick={() => setIsOpen(true)} />
           <LogOutButton />
         </div>
         <div className="user-info-container">
@@ -43,6 +48,9 @@ function UserProfile() {
         <h2 className="title-text">Dashboard</h2>
         <WorkoutPerWeek />
         <WeightChart />
+        <Modal isOpen={isOpen}>
+          <AddWeightModal onClick={() => setIsOpen(false)} />
+        </Modal>
       </div>
     </div>
   );
