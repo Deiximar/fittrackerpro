@@ -1,7 +1,7 @@
-import "./modal.scss"; // Importa los estilos del modal
+import "./modal.scss";
 
-const Modal = ({ open, children }) => {
-  if (!open) return null;
+const Modal = ({ isOpen, children }) => {
+  if (!isOpen) return null;
 
   return (
     <div className="modal isopen">
