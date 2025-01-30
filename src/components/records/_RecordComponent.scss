@@ -1,0 +1,16 @@
+@import "../../../styles.scss";
+
+.record-container {
+  padding: 0 30px;
+  .title {
+    text-align: center;
+    margin-bottom: 10px;
+    @include bold-text(26px, $gray);
+  }
+}
+
+.calendar-icon {
+  position: absolute;
+  top: 33px;
+  right: 30px;
+}

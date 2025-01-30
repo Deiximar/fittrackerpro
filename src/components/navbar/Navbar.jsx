@@ -10,9 +10,9 @@ function Navbar() {
         <li>
           <ProfileButton />
         </li>
-        {/* <li>
+        <li>
           <HistoryButton />
-        </li> */}
+        </li>
         <li>
           <StartWorkoutButton />
         </li>
