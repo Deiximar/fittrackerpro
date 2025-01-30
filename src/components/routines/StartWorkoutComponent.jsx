@@ -8,7 +8,7 @@ import {
 } from "@tanstack/react-query";
 import { fetchRoutines, fetchUserRoutines } from "../../service/routineApi";
 import { useAuth } from "../../context/authContext";
-import "./startWorkout.scss";
+import "./_StartWorkout.scss";
 import { useState } from "react";
 
 function StartWorkoutComponent() {
