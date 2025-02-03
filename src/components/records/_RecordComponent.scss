@@ -7,6 +7,46 @@
     margin-bottom: 10px;
     @include bold-text(26px, $gray);
   }
+
+  .month-container {
+    margin-top: 20px;
+    .month-title {
+      @include regular-text(12px, $black);
+      text-indent: 6px;
+    }
+
+    .record-day-container {
+      margin-top: 10px;
+      border: 1px solid $gray;
+      border-radius: 10px;
+      padding: 15px;
+
+      .subtitle {
+        @include semibold-text(14px, $black);
+      }
+
+      .day-subtitle {
+        @include semibold-text(12px, $gray);
+        margin-top: 1px;
+      }
+
+      .exercise-container {
+        justify-content: start;
+        gap: 65px;
+        margin-top: 15px;
+        padding: 0;
+
+        ul {
+          list-style-type: none;
+          line-height: 1.35;
+          margin-top: 5px;
+          li {
+            @include semibold-text(14px, $gray);
+          }
+        }
+      }
+    }
+  }
 }
 
 .calendar-icon {
