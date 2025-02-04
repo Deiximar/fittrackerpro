@@ -2,6 +2,32 @@
 
 .record-container {
   padding: 0 30px;
+  overflow: hidden;
+  height: 100%;
+  max-height: 100%;
+
+  .scroll-bar {
+    max-height: inherit;
+    overflow-y: auto;
+    padding-bottom: 70px;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+  }
+
+  .month-title {
+    @include regular-text(12px, $black);
+    text-indent: 6px;
+  }
+
   .title {
     text-align: center;
     margin-bottom: 10px;
@@ -10,10 +36,6 @@
 
   .month-container {
     margin-top: 20px;
-    .month-title {
-      @include regular-text(12px, $black);
-      text-indent: 6px;
-    }
 
     .record-day-container {
       margin-top: 10px;
@@ -31,6 +53,7 @@
       }
 
       .exercise-container {
+        display: flex;
         justify-content: start;
         gap: 65px;
         margin-top: 15px;

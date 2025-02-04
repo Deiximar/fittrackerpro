@@ -3,7 +3,7 @@ import RecordComponent from "../components/records/RecordComponent";
 import CalendarButton from "../components/buttons/CalendarButton";
 function History() {
   return (
-    <div>
+    <div className="main-container">
       <Logo />
       <CalendarButton />
       <RecordComponent />
