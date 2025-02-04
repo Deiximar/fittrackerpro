@@ -56,13 +56,12 @@
     max-height: 665px;
     overflow-y: auto;
     padding-right: 10px;
-    /* Asegúrate de que estas clases estén correctamente aplicadas */
     &::-webkit-scrollbar {
       width: 8px;
     }
 
     &::-webkit-scrollbar-track {
-      background: transparent; /* Cambia si necesitas */
+      background: transparent;
     }
 
     &::-webkit-scrollbar-thumb {
