@@ -55,3 +55,13 @@
     fill: $green;
   }
 }
+
+.icon-button {
+  background: transparent;
+  border: none;
+
+  width: fit-content;
+  .icon {
+    fill: $green;
+  }
+}

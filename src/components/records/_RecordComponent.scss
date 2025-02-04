@@ -1,0 +1,79 @@
+@import "../../../styles.scss";
+
+.record-container {
+  padding: 0 30px;
+  overflow: hidden;
+  height: 100%;
+  max-height: 100%;
+
+  .scroll-bar {
+    max-height: inherit;
+    overflow-y: auto;
+    padding-bottom: 70px;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+  }
+
+  .month-title {
+    @include regular-text(12px, $black);
+    text-indent: 6px;
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: 10px;
+    @include bold-text(26px, $gray);
+  }
+
+  .month-container {
+    margin-top: 20px;
+
+    .record-day-container {
+      margin-top: 10px;
+      border: 1px solid $gray;
+      border-radius: 10px;
+      padding: 15px;
+
+      .subtitle {
+        @include semibold-text(14px, $black);
+      }
+
+      .day-subtitle {
+        @include semibold-text(12px, $gray);
+        margin-top: 1px;
+      }
+
+      .exercise-container {
+        display: flex;
+        justify-content: start;
+        gap: 65px;
+        margin-top: 15px;
+        padding: 0;
+
+        ul {
+          list-style-type: none;
+          line-height: 1.35;
+          margin-top: 5px;
+          li {
+            @include semibold-text(14px, $gray);
+          }
+        }
+      }
+    }
+  }
+}
+
+.calendar-icon {
+  position: absolute;
+  top: 33px;
+  right: 30px;
+}

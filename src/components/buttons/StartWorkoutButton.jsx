@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import PlusIcon from "../icons/PlusIcon";
-import "./iconButton.scss";
+import "./_IconButton.scss";
 
 function StartWorkoutButton() {
   return (

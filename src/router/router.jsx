@@ -24,11 +24,14 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <ProtectedRoute />,
+            element: <ProtectedRoute element={<UserProfile />} />,
           },
           { path: "login", element: <Login /> },
           { path: "register", element: <Register /> },
-          { path: "user", element: <UserProfile /> },
+          {
+            path: "user",
+            element: <ProtectedRoute element={<UserProfile />} />,
+          },
         ],
       },
 

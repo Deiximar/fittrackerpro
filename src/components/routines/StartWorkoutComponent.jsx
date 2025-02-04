@@ -1,21 +1,29 @@
 import React from "react";
 import RoutineWidget from "./RoutineWidget";
 import AddRoutineButton from "../buttons/AddRoutineButton";
-import { useQuery } from "@tanstack/react-query";
+import {
+  useQuery,
+  useInfiniteQuery,
+  keepPreviousData,
+} from "@tanstack/react-query";
 import { fetchRoutines, fetchUserRoutines } from "../../service/routineApi";
 import { useAuth } from "../../context/authContext";
-import "./startWorkout.scss";
+import "./_StartWorkout.scss";
+import { useState } from "react";
 
 function StartWorkoutComponent() {
-  const { isAuthenticated } = useAuth();
+  const [page, setPage] = useState(0);
 
+  const { isAuthenticated, token } = useAuth();
   const {
     data: routines,
+    fetchNextPage: fetchNextPageRoutine,
+    hasNextPage: hasNextPageRoutine,
+    isFetchingNextPage: isFetchingNextPageRoutine,
     status: routinesStatus,
     error: routinesError,
   } = useQuery({
-    queryKey: ["routine"],
-    queryFn: fetchRoutines,
+    queryFn: () => fetchRoutines(page),
   });
 
   const {
@@ -23,23 +31,24 @@ function StartWorkoutComponent() {
     status: userRoutinesStatus,
     error: userRoutinesError,
   } = useQuery({
-    queryKey: ["userRoutines"],
+    queryKey: ["userRoutines", token, page],
     queryFn: fetchUserRoutines,
-    enabled: isAuthenticated,
+    enabled: isAuthenticated && !!token,
+    placeholderData: keepPreviousData,
   });
-  console.log("user", userRoutines);
-  console.log("other", routines);
+
+  console.log({ userRoutines, routines });
 
   return (
     <div className="start-workout-container">
       <h2 className="title">Start Workout</h2>
 
       <div className="routines">
-        {isAuthenticated && (
+        {isAuthenticated && !!token && (
           <div className="routine-container">
             <div className="header">
               <h3 className="subtitle">My Routines</h3>
-              <AddRoutineButton />
+              {/* <AddRoutineButton /> */}
             </div>
 
             <div className="routine-list">
@@ -48,7 +57,7 @@ function StartWorkoutComponent() {
               ) : userRoutinesStatus === "error" ? (
                 <p>Error loading user routines: {userRoutinesError.message}</p>
               ) : (
-                userRoutines?.map((routine) => (
+                userRoutines?.content?.map((routine) => (
                   <RoutineWidget key={routine.id} routine={routine} />
                 ))
               )}
@@ -64,7 +73,7 @@ function StartWorkoutComponent() {
             ) : routinesStatus === "error" ? (
               <p>Error loading routines: {routinesError.message}</p>
             ) : (
-              routines?.map((routine) => (
+              routines?.content?.map((routine) => (
                 <RoutineWidget key={routine.id} routine={routine} />
               ))
             )}

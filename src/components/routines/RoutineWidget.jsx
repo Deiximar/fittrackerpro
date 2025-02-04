@@ -3,13 +3,14 @@ import ActionButton from "../buttons/ActionButton";
 
 function RoutineWidget({ routine }) {
   const getExerciseNames = () => {
-    if (routine.routineExercises) {
+    if (routine.routineExercises.length > 0) {
       const exerciseNames = routine.routineExercises.map(
-        (exercise) => exercise.exerciseName
+        (exercise) => exercise.exercise.name
       );
       return exerciseNames.join(", ");
+    } else {
+      return "No exercises added";
     }
-    return "";
   };
   return (
     <div className="routine-widget-container">

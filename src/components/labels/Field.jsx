@@ -2,7 +2,7 @@ import "./Field.scss";
 const Field = ({ field, name, placeholder, value, onchange, type, error }) => {
   return (
     <div className="field-container">
-      <label htmlFor="Name">{field}</label>
+      <label>{field}</label>
       <input
         type={type}
         name={name}
