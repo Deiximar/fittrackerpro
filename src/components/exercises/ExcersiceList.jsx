@@ -56,10 +56,10 @@ function ExcersiceList() {
   );
 
   return (
-    <div className="exercise-container">
+    <div className="exercises-container">
       <h2 className="title">Exercises</h2>
 
-      <div>
+      <div className="search-container">
         <div className="search-bar">
           <input
             type="text"
