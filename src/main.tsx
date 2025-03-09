@@ -7,7 +7,13 @@ import { AuthProvider } from "./context/authContext";
 
 const queryClient = new QueryClient();
 
-createRoot(document.getElementById("root")).render(
+const root = document.getElementById("root");
+
+if (!root) {
+  throw new Error("Element with id 'root' not found");
+}
+
+createRoot(root).render(
   <AuthProvider>
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />

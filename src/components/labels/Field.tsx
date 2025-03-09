@@ -1,5 +1,24 @@
 import "./Field.scss";
-const Field = ({ field, name, placeholder, value, onchange, type, error }) => {
+
+interface FieldProps {
+  field?: string;
+  name: string;
+  placeholder?: string;
+  value?: string;
+  onchange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  type?: string;
+  error?: string;
+}
+
+const Field = ({
+  field,
+  name,
+  placeholder,
+  value,
+  onchange,
+  type,
+  error,
+}: FieldProps) => {
   return (
     <div className="field-container">
       <label>{field}</label>

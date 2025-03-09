@@ -1,9 +1,13 @@
 import Field from "../labels/Field";
-import CloseButton from "../buttons/ CloseButton";
+import CloseButton from "../buttons/CloseButton";
 import "./_AddWeightModal.scss";
 import { useState } from "react";
 
-function addWeightModal({ onClick }) {
+interface AddWeightModalProps {
+  onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+}
+
+function AddWeightModal({ onClick }: AddWeightModalProps) {
   return (
     <div className="weight-container">
       <CloseButton onClick={onClick}></CloseButton>
@@ -16,4 +20,4 @@ function addWeightModal({ onClick }) {
   );
 }
 
-export default addWeightModal;
+export default AddWeightModal;
